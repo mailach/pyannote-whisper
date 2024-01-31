@@ -18,7 +18,7 @@ from pyannote.audio.pipelines.utils.hook import ProgressHook
 torch.cuda.init()
 
 pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1",
-                                    use_auth_token="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")
+                                    use_auth_token=os.environ.get("HF_TOKEN"))
 pipeline = pipeline.to(torch.device('cuda'))
 
 
